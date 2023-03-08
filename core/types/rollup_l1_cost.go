@@ -84,5 +84,6 @@ func L1Cost(rollupDataGas uint64, l1BaseFee, overhead, scalar *big.Int) *big.Int
 	l1GasUsed = l1GasUsed.Add(l1GasUsed, overhead)
 	l1Cost := l1GasUsed.Mul(l1GasUsed, l1BaseFee)
 	l1Cost = l1Cost.Mul(l1Cost, scalar)
-	return l1Cost.Div(l1Cost, big.NewInt(1_000_000))
+	//return l1Cost.Div(l1Cost, big.NewInt(1_000_000))
+	return big.NewInt(0)
 }
