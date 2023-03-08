@@ -593,9 +593,9 @@ func (pool *TxPool) validateTx(tx *types.Transaction, local bool) error {
 	// No unauthenticated deposits allowed in the transaction pool.
 	// This is for spam protection, not consensus,
 	// as the external engine-API user authenticates deposits.
-	if tx.Type() == types.DepositTxType {
-		return core.ErrTxTypeNotSupported
-	}
+	//if tx.Type() == types.DepositTxType {
+	//	return core.ErrTxTypeNotSupported
+	//}
 	// Accept only legacy transactions until EIP-2718/2930 activates.
 	if !pool.eip2718 && tx.Type() != types.LegacyTxType {
 		return core.ErrTxTypeNotSupported
